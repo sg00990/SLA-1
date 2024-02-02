@@ -55,9 +55,6 @@ col1, col2, col3 = st.columns(3)
 with col3:
     if st.button("Submit", use_container_width=True):
         st.success("Thank you for your responses!")
-        with st.spinner("Redirecting to next page..."):
-            time.sleep(5)
-        st.switch_page('pages/1_SLA_2.py')
 
 
 col4, col5, col6 = st.columns([1, .5, 1])
