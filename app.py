@@ -13,35 +13,30 @@ st.write("###")
 st.markdown('<p style="font-family:sans-serif; color:#87c440; font-size: 20px; font-weight: bold">SLA 1A/1B</p>', unsafe_allow_html=True)
 
 
-st.write("**Did your team experience a Planned or Unplanned Outage this past week?**")
+st.write("**Did your team experience an outage this past week?**")
 experienced_outage = st.radio("experienced_outage", options=["No", "Yes"], label_visibility="collapsed")
+st.write("**Outage Reason**")
+outage_desc = st.text_area("Brief Description", key="outage_desc")
 
-if experienced_outage == "Yes":
-    st.write("**If yes, please answer the following**")
-    workstream = st.selectbox("Workstream", options=["BP", "Impact", "LDAP", "Doc Center"])
-    outage_planned = st.radio("Planned?", options=["No", "Yes"])
+col3, col4 = st.columns(2)
 
-    col3, col4 = st.columns(2)
+with col3:
+    outage_start = st.date_input(
+        "Outage Start Date",
+        format="MM/DD/YYYY"
+    )
+with col4:
+    outage_start_time = st.time_input("Outage Start Time", step=60)
 
-    with col3:
-        outage_start = st.date_input(
-            "Outage Start Date",
-            format="MM/DD/YYYY"
-        )
-    with col4:
-        outage_start_time = st.time_input("Outage Start Time", step=60)
+col5, col6 = st.columns(2)
 
-    col5, col6 = st.columns(2)
-
-    with col5:
-        outage_end = st.date_input(
-            "Outage End Date",
-            format="MM/DD/YYYY",
-        )
-    with col6:
-        outage_end_time = st.time_input("Outage End Time", step=60)
-
-    outage_desc = st.text_area("Brief Description", key="outage_desc")
+with col5:
+    outage_end = st.date_input(
+        "Outage End Date",
+        format="MM/DD/YYYY",
+    )
+with col6:
+    outage_end_time = st.time_input("Outage End Time", step=60)
 
 
 st.write("**Date**")
