@@ -2,12 +2,12 @@ import streamlit as st
 import time
 
 st.set_page_config(
-    page_title="Tier 2 SLA Questionnaire",
+    page_title="Tier 1 SLA Questionnaire",
     page_icon="💻",
     layout="wide"
 )
 
-st.markdown('<p style="font-family:sans-serif; color:#324a62; font-size: 28px; font-weight: bold">Tier 2 SLA Questionnaire</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-family:sans-serif; color:#324a62; font-size: 28px; font-weight: bold">Tier 1 SLA Questionnaire</p>', unsafe_allow_html=True)
 st.write("###")
 
 st.markdown('<p style="font-family:sans-serif; color:#87c440; font-size: 20px; font-weight: bold">SLA 1</p>', unsafe_allow_html=True)
