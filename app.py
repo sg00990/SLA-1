@@ -10,7 +10,7 @@ st.set_page_config(
 st.markdown('<p style="font-family:sans-serif; color:#324a62; font-size: 28px; font-weight: bold">Tier 2 SLA Questionnaire</p>', unsafe_allow_html=True)
 st.write("###")
 
-st.markdown('<p style="font-family:sans-serif; color:#87c440; font-size: 20px; font-weight: bold">SLA 1A/1B</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-family:sans-serif; color:#87c440; font-size: 20px; font-weight: bold">SLA 1</p>', unsafe_allow_html=True)
 
 
 st.write("**Did your team experience an outage this past week?**")
