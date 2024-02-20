@@ -1,5 +1,4 @@
 import streamlit as st
-import snowflake.connector
 import datetime
 import json
 
