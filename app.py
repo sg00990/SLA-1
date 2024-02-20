@@ -3,7 +3,7 @@ import datetime
 import json
 
 st.set_page_config(
-    page_title="Tier 1 SLA Questionnaire",
+    page_title="SLA 1 Questionnaire",
     page_icon="💻",
     layout="wide"
 )
@@ -16,8 +16,7 @@ st.write("###")
 st.markdown('<p style="font-family:sans-serif; color:#87c440; font-size: 20px; font-weight: bold">SLA 1</p>', unsafe_allow_html=True)
 
 st.write("**Availability of Help Desk**")
-help_desk = st.text_area("help_desk", label_visibility="collapsed")
-help_desk = help_desk.replace("\n", "  ").replace("'", "''").replace('"', r'\"')
+st.write("##")
 st.write("**Did your team experience an outage this past week?**")
 experienced_outage = st.radio("experienced_outage", options=["No", "Yes"], label_visibility="collapsed")
 
@@ -60,7 +59,6 @@ col1, col2, col3 = st.columns(3)
 with col3:
     if st.button("Submit", use_container_width=True):
         data = {
-            "sla_1_helpdesk_availability": help_desk,
             "sla_1_experienced_outage": experienced_outage,
             "sla_1_outage_start": outage_start_datetime,
             "sla_1_outage_end": outage_end_datetime,
