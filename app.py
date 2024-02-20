@@ -71,9 +71,10 @@ with col3:
 
         date_submitted = datetime.datetime.now()
 
-        conn.query(f""" INSERT INTO sla_tier_1_questionnaire (type, date_submitted, json_data) SELECT 'SLA 1', '{date_submitted}', (parse_json('{json_data}'))""")
-
-        st.success("Thank you for your responses!")
+        try:
+            conn.query(f""" INSERT INTO sla_tier_1_questionnaire (type, date_submitted, json_data) SELECT 'SLA 1', '{date_submitted}', (parse_json('{json_data}'))""")
+        except:
+            st.success("Thank you for your responses!")
 
 
 col4, col5, col6 = st.columns([1, .5, 1])
