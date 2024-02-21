@@ -16,7 +16,7 @@ st.write("###")
 st.markdown('<p style="font-family:sans-serif; color:#87c440; font-size: 20px; font-weight: bold">SLA 1</p>', unsafe_allow_html=True)
 
 st.write("**Availability of Help Desk**")
-st.write("##")
+st.write("#####")
 st.write("**Did your team experience an outage this past week?**")
 experienced_outage = st.radio("experienced_outage", options=["No", "Yes"], label_visibility="collapsed")
 
@@ -34,7 +34,7 @@ if experienced_outage == "Yes":
             format="MM/DD/YYYY"
         )
     with col4:
-        outage_start_time = st.time_input("Outage Start Time", step=60)
+        outage_start_time = st.time_input("Outage Start Time", step=60, value=None, help="Please type or select a time from the list. To restart, please select the 'x' to the right.")
 
     col5, col6 = st.columns(2)
 
@@ -44,10 +44,13 @@ if experienced_outage == "Yes":
             format="MM/DD/YYYY",
         )
     with col6:
-        outage_end_time = st.time_input("Outage End Time", step=60)
+        outage_end_time = st.time_input("Outage End Time", step=60, value=None, help="Please type or select a time from the list. To restart, please select the 'x' to the right.")
 
-    outage_start_datetime = datetime.datetime.combine(outage_start, outage_start_time)
-    outage_end_datetime = datetime.datetime.combine(outage_end, outage_end_time)
+    if outage_start_time is not None:
+        outage_start_datetime = datetime.datetime.combine(outage_start, outage_start_time)
+
+    if outage_end_time is not None:
+        outage_end_datetime = datetime.datetime.combine(outage_end, outage_end_time)
 
     st.write("**Outage Reason**")
     reason = st.text_area("reason", label_visibility="collapsed")
