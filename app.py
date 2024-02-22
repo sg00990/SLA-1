@@ -34,7 +34,7 @@ if experienced_outage == "Yes":
             format="MM/DD/YYYY"
         )
     with col4:
-        outage_start_time = st.time_input("Outage Start Time", step=60, value=None, help="Please type or select a time from the list. To restart, please select the 'x' to the right.")
+        outage_start_time = st.time_input("Outage Start Time", step=60, value=None, help="Please enter a time or select one from the list. Press 'Enter' before proceeding. To restart, click the 'x' icon on the right.")
 
     col5, col6 = st.columns(2)
 
@@ -44,7 +44,7 @@ if experienced_outage == "Yes":
             format="MM/DD/YYYY",
         )
     with col6:
-        outage_end_time = st.time_input("Outage End Time", step=60, value=None, help="Please type or select a time from the list. To restart, please select the 'x' to the right.")
+        outage_end_time = st.time_input("Outage End Time", step=60, value=None, help="Please enter a time or select one from the list. Press 'Enter' before proceeding. To restart, click the 'x' icon on the right.")
 
     if outage_start_time is not None:
         outage_start_datetime = datetime.datetime.combine(outage_start, outage_start_time)
